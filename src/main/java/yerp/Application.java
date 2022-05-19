@@ -18,7 +18,8 @@ public class Application extends SpringBootServletInitializer {
 	}
 	//dev 다
 	/// 나이제 개발완료 다음날 
-	
+	// 다시한번 더 수정 했다
+	// 다시한번 더 수정 했다
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
