@@ -158,6 +158,8 @@
 	//========================================================
 	scwin.onpageload = function() {
 		// Mobile일때 메뉴 동작	
+		// 수정 완료 5. 20  
+
 		if(WebSquare.util.isMobile()){
 			$(".wrap").removeClass("show_menu");
 			
