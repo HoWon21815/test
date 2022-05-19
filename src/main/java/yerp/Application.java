@@ -17,7 +17,7 @@ public class Application extends SpringBootServletInitializer {
 		return application.sources(Application.class);
 	}
 	//dev 다
-	
+	/// 나이제 개발완료
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
