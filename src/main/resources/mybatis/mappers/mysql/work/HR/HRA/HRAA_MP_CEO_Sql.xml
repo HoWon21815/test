@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="HR.HRA">
+
+<!--  멀티 Select 처리
+ 	<resultMap type="jsonObject" id="datalist1"></resultMap>
+	<resultMap type="jsonObject" id="datalist2"></resultMap>
+	<resultMap type="jsonObject" id="datalist3"></resultMap>
+	<resultMap type="jsonObject" id="datalist4"></resultMap>
+	<resultMap type="jsonObject" id="datalist5"></resultMap>
+	<resultMap type="jsonObject" id="datalist6"></resultMap>
+
+	<select id="HRAA_BC_CEO_Select" parameterType="jsonObject" resultMap="datalist1,datalist2" statementType="CALLABLE"> -->
+
+
+	<select id="HRAA_BC_CEO_Select" parameterType="jsonObject" resultType="jsonObject" statementType="CALLABLE">
+		{CALL dbo.HRAA_SP_CEO_Select(
+			   #{TY_Now}
+		)}
+	</select>
+	
+	<select id="HRAA_MP_CEO_Insert" parameterType="jsonObject"  statementType="CALLABLE">
+		{CALL dbo.HRAA_SP_CEO_Save(
+			   'I'
+			 , #{ID_Sabun}
+			 , #{DT_Start}
+			 , #{DT_End}
+			 , #{SESSION_USER_IDNT}
+		)}
+	</select>
+	
+	<select id="HRAA_MP_CEO_Update" parameterType="jsonObject"  statementType="CALLABLE">
+		{CALL dbo.HRAA_SP_CEO_Save(
+			   'U'
+			 , #{ID_Sabun}
+			 , #{DT_Start}
+			 , #{DT_End}
+			 , #{SESSION_USER_IDNT}
+		)}
+	</select>
+
+	<select id="HRAA_MP_CEO_Delete" parameterType="jsonObject"  statementType="CALLABLE">
+		{CALL dbo.HRAA_SP_CEO_Save(
+			   'D'
+			 , #{ID_Sabun}
+			 , #{DT_Start}
+			 , #{DT_End}
+			 , #{SESSION_USER_IDNT}
+		)}
+	</select>
+
+</mapper>
